@@ -55,6 +55,8 @@
   </Choose>
   <ItemGroup>
     <Compile Include="SampleData.cs" />
+    <Compile Include="InMemoryTradeHistoryUnitTests.cs" />
+    <Compile Include="StockCalculationsUnitTests.cs" />
     <Compile Include="StockMarketUnitTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
