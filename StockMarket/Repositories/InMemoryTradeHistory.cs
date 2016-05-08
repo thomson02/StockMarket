@@ -4,6 +4,7 @@
 // </copyright>
 // <summary>
 //   The in memory trade repository.
+//   TODO: Need a way to purge old, irrelevant trades as this will continually eat up memory! 
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 

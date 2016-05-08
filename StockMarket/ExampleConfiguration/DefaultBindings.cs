@@ -1,21 +1,35 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="StockMarketServiceProvider.cs" company="Thomson02">
+// <copyright file="TestBindings.cs" company="Thomson02">
 //    Copyright © Thomson02. All rights reserved.
 // </copyright>
 // <summary>
-//   Defines the StockMarketService type.
+//   The default bindings.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Thomson02.GBCE.Configuration
+namespace Thomson02.GBCE.ExampleConfiguration
 {
     using System;
     using System.Collections.Generic;
-    using Ninject;
     using Ninject.Activation;
-    using Thomson02.GBCE;
-    using Thomson02.GBCE.CoreTypes.Stock;
-    using Thomson02.GBCE.Repositories;
+    using Ninject.Modules;
+    using GBCE;
+    using CoreTypes.Stock;
+    using Repositories;
+
+    /// <summary>
+    /// The default bindings.
+    /// </summary>
+    public class DefaultBindings : NinjectModule
+    {
+        /// <summary>
+        /// The load of bindings.
+        /// </summary>
+        public override void Load()
+        {
+            this.Bind<StockMarketService>().ToProvider(new StockMarketServiceProvider()).InSingletonScope();
+        }
+    }
 
     /// <summary>
     /// The stock market service provider
@@ -30,8 +44,8 @@ namespace Thomson02.GBCE.Configuration
         public object Create(IContext context)
         {
             return new StockMarketService(
-                context.Kernel.Get<ITradeHistory>(),
-                new Dictionary<string, Stock>());
+                new InMemoryTradeHistory(),       // Could use an alternative ITradeHistory implementation. Perhaps backed by a database. 
+                new Dictionary<string, Stock>()); // Used to initially seed the StockMarket with valid stock types.
         }
 
         /// <summary>

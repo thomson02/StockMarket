@@ -36,7 +36,7 @@ namespace Thomson02.GBCE
         /// Initializes a new instance of the <see cref="StockMarketService"/> class.
         /// </summary>
         /// <param name="tradeHistory">The trade repository.</param>
-        /// <param name="stockCatalogue">The permitted, tradable stocks</param>
+        /// <param name="stockCatalogue">The permitted, tradable stocks. Keyed by stockSymbol to ensure there are no duplicates.</param>
         public StockMarketService(ITradeHistory tradeHistory, Dictionary<string, Stock> stockCatalogue)
         {
             this.tradeHistory = tradeHistory;
