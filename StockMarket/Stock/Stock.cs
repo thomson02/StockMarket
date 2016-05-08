@@ -15,11 +15,6 @@ namespace Thomson02.GBCE.Stock
     public abstract class Stock
     {
         /// <summary>
-        /// The stock symbol 
-        /// </summary>
-        private string symbol;
-
-        /// <summary>
         /// The last dividend value
         /// </summary>
         private double lastDividend;
@@ -37,10 +32,15 @@ namespace Thomson02.GBCE.Stock
         /// <param name="parValue">The par value</param>
         protected Stock(string symbol, double lastDividend, double parValue)
         {
-            this.symbol = symbol;
+            this.Symbol = symbol;
             this.lastDividend = lastDividend;
             this.parValue = parValue;
         }
+
+        /// <summary>
+        /// Gets the symbol.
+        /// </summary>
+        public string Symbol { get; private set; }
 
         /// <summary>
         /// Gets the Stock Type
