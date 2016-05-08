@@ -37,5 +37,16 @@ namespace Thomson02.GBCE.Logging
             Console.Out.WriteLine("[" + ex.GetType() + "] " + ex.Message);
             Console.ResetColor();
         }
+
+        /// <summary>
+        /// Logs details about the exception that has occurred.
+        /// </summary>
+        /// <param name="message">The exception message to be logged.</param>
+        public void LogException(string message)
+        {
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.Out.WriteLine(message);
+            Console.ResetColor();
+        }
     }
 }

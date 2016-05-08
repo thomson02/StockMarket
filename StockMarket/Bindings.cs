@@ -9,7 +9,11 @@
 
 namespace Thomson02.GBCE
 {
+    using System.Collections.Generic;
+
     using Ninject.Modules;
+
+    using Thomson02.GBCE.CoreTypes.Stock;
     using Thomson02.GBCE.Logging;
     using Thomson02.GBCE.Repositories;
 
@@ -26,7 +30,8 @@ namespace Thomson02.GBCE
             this.Bind<ILogHelper>().To<ConsoleLogHelper>();
             this.Bind<ITradeHistory>().To<InMemoryTradeHistory>();
 
-            this.Bind<StockMarket>().ToSelf().InSingletonScope();
+            var emptyStockCatalogue = new Dictionary<string, Stock>();
+            this.Bind<StockMarket>().ToSelf().InSingletonScope().WithConstructorArgument("stockCatalogue", emptyStockCatalogue);
         }
     }
 }

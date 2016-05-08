@@ -20,7 +20,7 @@ namespace Thomson02.GBCE.CoreTypes.Trade
         /// <summary>
         /// The timestamp of the trade. 
         /// </summary>
-        private readonly DateTime timestamp;
+        public readonly DateTime Timestamp;
 
         /// <summary>
         /// The type of the trade
@@ -55,7 +55,7 @@ namespace Thomson02.GBCE.CoreTypes.Trade
             this.tradeType = tradeType;
             this.price = price;
             this.quantity = quantity;
-            this.timestamp = DateTime.UtcNow;
+            this.Timestamp = DateTime.UtcNow;
         }
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace Thomson02.GBCE.CoreTypes.Trade
         /// <returns>string representation of the <see cref="Trade"/></returns>
         public override string ToString()
         {
-            return $"{this.timestamp}   TRADE/{this.tradeType}    STOCK: {this.stockSymbol}   QTY: {this.quantity}    PRICE: {this.price}";
+            return $"{this.Timestamp}   TRADE/{this.tradeType}    STOCK: {this.stockSymbol}   QTY: {this.quantity}    PRICE: {this.price}";
         }
     }
 

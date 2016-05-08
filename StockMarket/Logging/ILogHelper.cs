@@ -27,5 +27,11 @@ namespace Thomson02.GBCE.Logging
         /// </summary>
         /// <param name="ex">The exception to be logged.</param>
         void LogException(Exception ex);
+
+        /// <summary>
+        /// Logs details about the exception that has occurred.
+        /// </summary>
+        /// <param name="message">The exception message to be logged.</param>
+        void LogException(string message);
     }
 }
