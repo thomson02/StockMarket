@@ -46,10 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bindings.cs" />
     <Compile Include="Calculations.cs" />
-    <Compile Include="Logging\ConsoleLogHelper.cs" />
-    <Compile Include="Logging\ILogHelper.cs" />
+    <Compile Include="Configuration\DefaultBindings.cs" />
+    <Compile Include="Configuration\StockMarketServiceProvider.cs" />
     <Compile Include="Repositories\InMemoryTradeHistory.cs" />
     <Compile Include="Repositories\ITradeHistory.cs" />
     <Compile Include="StockMarketService.cs" />

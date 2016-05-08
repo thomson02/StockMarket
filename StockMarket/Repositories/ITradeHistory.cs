@@ -9,8 +9,8 @@
 
 namespace Thomson02.GBCE.Repositories
 {
+    using System;
     using System.Collections.Generic;
-
     using Thomson02.GBCE.CoreTypes.Trade;
 
     /// <summary>
@@ -28,6 +28,21 @@ namespace Thomson02.GBCE.Repositories
         /// The get trades by stock symbol.
         /// </summary>
         /// <param name="stockSymbol">The stock symbol.</param>
+        /// <param name="dateTime">Get trades from specified time onwards</param>
+        /// <returns>The <see cref="IEnumerable"/> of filtered trades.</returns>
+        IEnumerable<Trade> GetTrades(string stockSymbol, DateTime dateTime);
+
+        /// <summary>
+        /// The get trades by stock symbol.
+        /// </summary>
+        /// <param name="dateTime">Get trades from specified time onwards</param>
+        /// <returns>The <see cref="IEnumerable"/> of filtered trades.</returns>
+        IEnumerable<Trade> GetTrades(DateTime dateTime);
+
+        /// <summary>
+        /// The get trades by stock symbol.
+        /// </summary>
+        /// <param name="stockSymbol">The stock symbol.</param>
         /// <returns>The <see cref="IEnumerable"/> of filtered trades.</returns>
         IEnumerable<Trade> GetTrades(string stockSymbol);
 
@@ -35,6 +50,6 @@ namespace Thomson02.GBCE.Repositories
         /// The get all trades.
         /// </summary>
         /// <returns>The <see cref="IEnumerable"/> of all trades.</returns>
-        IEnumerable<Trade> GetAllTrades();
+        IEnumerable<Trade> GetTrades();
     }
 }

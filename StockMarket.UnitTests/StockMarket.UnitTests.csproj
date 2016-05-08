@@ -39,6 +39,10 @@
       <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Rhino.Mocks, Version=3.6.0.0, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
+      <HintPath>..\packages\RhinoMocks.3.6.1\lib\net\Rhino.Mocks.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <Choose>
@@ -54,10 +58,10 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="SampleData.cs" />
-    <Compile Include="InMemoryTradeHistoryUnitTests.cs" />
-    <Compile Include="StockCalculationsUnitTests.cs" />
-    <Compile Include="StockMarketServiceUnitTests.cs" />
+    <Compile Include="Data\SampleData.cs" />
+    <Compile Include="Tests\InMemoryTradeHistoryUnitTests.cs" />
+    <Compile Include="Tests\CalculationsUnitTests.cs" />
+    <Compile Include="Tests\StockMarketServiceUnitTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

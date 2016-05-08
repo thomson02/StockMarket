@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="Bindings.cs" company="Thomson02">
+// <copyright file="TestBindings.cs" company="Thomson02">
 //    Copyright © Thomson02. All rights reserved.
 // </copyright>
 // <summary>
@@ -7,31 +7,24 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Thomson02.GBCE
+namespace Thomson02.GBCE.Configuration
 {
-    using System.Collections.Generic;
-
+    using GBCE;
     using Ninject.Modules;
-
-    using Thomson02.GBCE.CoreTypes.Stock;
-    using Thomson02.GBCE.Logging;
-    using Thomson02.GBCE.Repositories;
+    using Repositories;
 
     /// <summary>
     /// The default bindings.
     /// </summary>
-    public class Bindings : NinjectModule
+    public class DefaultBindings : NinjectModule
     {
         /// <summary>
         /// The load of bindings.
         /// </summary>
         public override void Load()
         {
-            this.Bind<ILogHelper>().To<ConsoleLogHelper>();
             this.Bind<ITradeHistory>().To<InMemoryTradeHistory>();
-
-            var emptyStockCatalogue = new Dictionary<string, Stock>();
-            this.Bind<StockMarketService>().ToSelf().InSingletonScope().WithConstructorArgument("stockCatalogue", emptyStockCatalogue);
+            this.Bind<StockMarketService>().ToProvider(new StockMarketServiceProvider()).InSingletonScope();
         }
     }
 }

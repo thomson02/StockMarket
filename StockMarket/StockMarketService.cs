@@ -13,10 +13,8 @@ namespace Thomson02.GBCE
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
-
     using Thomson02.GBCE.CoreTypes.Stock;
     using Thomson02.GBCE.CoreTypes.Trade;
-    using Thomson02.GBCE.Logging;
     using Thomson02.GBCE.Repositories;
 
     /// <summary>
@@ -24,11 +22,6 @@ namespace Thomson02.GBCE
     /// </summary>
     public sealed class StockMarketService
     {
-        /// <summary>
-        /// The log helper.
-        /// </summary>
-        private readonly ILogHelper logHelper;
-
         /// <summary>
         /// The tradable stocks
         /// </summary>
@@ -42,12 +35,10 @@ namespace Thomson02.GBCE
         /// <summary>
         /// Initializes a new instance of the <see cref="StockMarketService"/> class.
         /// </summary>
-        /// <param name="logHelper">The log helper.</param>
         /// <param name="tradeHistory">The trade repository.</param>
         /// <param name="stockCatalogue">The permitted, tradable stocks</param>
-        private StockMarketService(ILogHelper logHelper, ITradeHistory tradeHistory, Dictionary<string, Stock> stockCatalogue)
+        public StockMarketService(ITradeHistory tradeHistory, Dictionary<string, Stock> stockCatalogue)
         {
-            this.logHelper = logHelper;
             this.tradeHistory = tradeHistory;
             this.stockCatalogue = stockCatalogue;
         }
@@ -72,16 +63,20 @@ namespace Thomson02.GBCE
         /// stock symbol based on trades in the past 5 minutes.
         /// </summary>
         /// <param name="stockSymbol"></param>
+        /// <param name="timeFilter">Number of minutes to filter trades by</param>
         /// <returns>The stock price.</returns>
-        public double CalcVolumeWeightedStockPrice(string stockSymbol)
+        public double CalcVolumeWeightedStockPrice(string stockSymbol, int timeFilter = 5)
         {
             return this.PerformCalculation(
                 stockSymbol,
                 stock =>
                     {
-                        var stockTrades = this.tradeHistory.GetTrades(stock.Symbol).ToList();
+                        var fromDateTime = DateTime.UtcNow.Subtract(new TimeSpan(0, timeFilter, 0));
+                        var stockTrades = this.tradeHistory.GetTrades(stock.Symbol, fromDateTime).ToList();
                    
-                        return Calculations.VolumeWeightedStockPrice(stockTrades);
+                        return stockTrades.Any() 
+                            ? Calculations.VolumeWeightedStockPrice(stockTrades) 
+                            : 0;
                     });
         }
 
