@@ -27,21 +27,23 @@ namespace Thomson02.GBCE
         /// <summary>
         /// The trade repository.
         /// </summary>
-        private ITradeRepository tradeRepository;
+        private ITradeHistory tradeHistory;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="StockMarket"/> class.
         /// </summary>
         /// <param name="logHelper">The log helper.</param>
-        /// <param name="tradeRepository">The trade repository.</param>
-        private StockMarket(ILogHelper logHelper, ITradeRepository tradeRepository)
+        /// <param name="tradeHistory">The trade repository.</param>
+        private StockMarket(ILogHelper logHelper, ITradeHistory tradeHistory)
         {
             this.logHelper = logHelper;
-            this.tradeRepository = tradeRepository;
+            this.tradeHistory = tradeHistory;
         }
 
         public void BuyStock(Stock stock, double price, int quantity)
         {
+
+
             var trade = new Trade(stock, TradeType.Buy, price, quantity);
         }
 

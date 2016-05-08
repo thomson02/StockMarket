@@ -24,7 +24,7 @@ namespace Thomson02.GBCE
         public override void Load()
         {
             this.Bind<ILogHelper>().To<ConsoleLogHelper>();
-            this.Bind<ITradeRepository>().To<InMemoryTradeRepository>();
+            this.Bind<ITradeHistory>().To<InMemoryTradeHistory>();
 
             this.Bind<StockMarket>().ToSelf().InSingletonScope();
         }

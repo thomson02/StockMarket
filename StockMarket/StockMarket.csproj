@@ -49,8 +49,8 @@
     <Compile Include="Bindings.cs" />
     <Compile Include="Logging\ConsoleLogHelper.cs" />
     <Compile Include="Logging\ILogHelper.cs" />
-    <Compile Include="Repositories\InMemoryTradeRepository.cs" />
-    <Compile Include="Repositories\ITradeRepository.cs" />
+    <Compile Include="Repositories\InMemoryTradeHistory.cs" />
+    <Compile Include="Repositories\ITradeHistory.cs" />
     <Compile Include="StockMarket.cs" />
     <Compile Include="CoreTypes\Stock\PreferredStock.cs" />
     <Compile Include="CoreTypes\Stock\CommonStock.cs" />

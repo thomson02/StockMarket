@@ -1,18 +1,18 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="ITradeRepository.cs" company="Thomson02">
+// <copyright file="InMemoryTradeHistory.cs" company="Thomson02">
 //    Copyright © Thomson02. All rights reserved.
 // </copyright>
 // <summary>
-//   The TradeRepository interface.
+//   The in memory trade repository.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
 namespace Thomson02.GBCE.Repositories
 {
     /// <summary>
-    /// The TradeRepository interface.
+    /// The in memory trade repository.
     /// </summary>
-    public interface ITradeRepository
+    public class InMemoryTradeHistory : ITradeHistory
     {
     }
 }
