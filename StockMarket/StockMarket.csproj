@@ -7,7 +7,7 @@
     <ProjectGuid>{44551D11-CE8E-4AE6-93CC-A1C0A0714BE4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Thomson02.GBCE</RootNamespace>
+    <RootNamespace>Thomson02.StockMarket</RootNamespace>
     <AssemblyName>StockMarket</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -47,8 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Calculations.cs" />
-    <Compile Include="Configuration\DefaultBindings.cs" />
-    <Compile Include="Configuration\StockMarketServiceProvider.cs" />
+    <Compile Include="ExampleConfiguration\DefaultBindings.cs" />
     <Compile Include="Repositories\InMemoryTradeHistory.cs" />
     <Compile Include="Repositories\ITradeHistory.cs" />
     <Compile Include="StockMarketService.cs" />

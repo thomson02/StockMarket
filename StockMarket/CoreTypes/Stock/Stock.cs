@@ -7,7 +7,7 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Thomson02.GBCE.CoreTypes.Stock
+namespace Thomson02.StockMarket.CoreTypes.Stock
 {
     using System.Diagnostics.CodeAnalysis;
 

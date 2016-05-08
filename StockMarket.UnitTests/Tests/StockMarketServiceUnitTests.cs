@@ -13,9 +13,10 @@ namespace StockMarket.UnitTests.Tests
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Rhino.Mocks;
     using StockMarket.UnitTests.Data;
-    using Thomson02.GBCE;
-    using Thomson02.GBCE.CoreTypes.Trade;
-    using Thomson02.GBCE.Repositories;
+
+    using Thomson02.StockMarket;
+    using Thomson02.StockMarket.CoreTypes.Trade;
+    using Thomson02.StockMarket.Repositories;
 
     /// <summary>
     /// The stock market unit tests.

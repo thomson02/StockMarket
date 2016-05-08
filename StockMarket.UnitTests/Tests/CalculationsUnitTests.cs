@@ -12,9 +12,10 @@ namespace StockMarket.UnitTests.Tests
     using System;
     using System.Collections.Generic;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using Thomson02.GBCE;
-    using Thomson02.GBCE.CoreTypes.Stock;
-    using Thomson02.GBCE.CoreTypes.Trade;
+
+    using Thomson02.StockMarket;
+    using Thomson02.StockMarket.CoreTypes.Stock;
+    using Thomson02.StockMarket.CoreTypes.Trade;
 
     /// <summary>
     /// The stock market unit tests.

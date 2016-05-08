@@ -7,15 +7,16 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Thomson02.GBCE
+namespace Thomson02.StockMarket
 {
     using System;
     using System.Collections.Generic;
     using System.Diagnostics.CodeAnalysis;
     using System.Linq;
-    using Thomson02.GBCE.CoreTypes.Stock;
-    using Thomson02.GBCE.CoreTypes.Trade;
-    using Thomson02.GBCE.Repositories;
+
+    using Thomson02.StockMarket.CoreTypes.Stock;
+    using Thomson02.StockMarket.CoreTypes.Trade;
+    using Thomson02.StockMarket.Repositories;
 
     /// <summary>
     /// The stock market.

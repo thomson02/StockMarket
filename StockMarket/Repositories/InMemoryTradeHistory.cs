@@ -8,13 +8,13 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Thomson02.GBCE.Repositories
+namespace Thomson02.StockMarket.Repositories
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
 
-    using Thomson02.GBCE.CoreTypes.Trade;
+    using Thomson02.StockMarket.CoreTypes.Trade;
 
     /// <summary>
     /// The in memory trade repository.

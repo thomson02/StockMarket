@@ -7,13 +7,14 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Thomson02.GBCE.ExampleConfiguration
+namespace Thomson02.StockMarket.ExampleConfiguration
 {
     using System;
     using System.Collections.Generic;
+
     using Ninject.Activation;
     using Ninject.Modules;
-    using GBCE;
+
     using CoreTypes.Stock;
     using Repositories;
 

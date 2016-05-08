@@ -14,9 +14,10 @@ namespace StockMarket.UnitTests.Tests
     using System.Linq;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Data;
-    using Thomson02.GBCE.CoreTypes.Stock;
-    using Thomson02.GBCE.CoreTypes.Trade;
-    using Thomson02.GBCE.Repositories;
+
+    using Thomson02.StockMarket.CoreTypes.Stock;
+    using Thomson02.StockMarket.CoreTypes.Trade;
+    using Thomson02.StockMarket.Repositories;
 
     /// <summary>
     /// The In Memory Trade History Unit Tests

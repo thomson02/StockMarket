@@ -7,9 +7,10 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Thomson02.GBCE.CoreTypes.Trade
+namespace Thomson02.StockMarket.CoreTypes.Trade
 {
     using System;
+
     using Stock;
 
     /// <summary>

@@ -10,7 +10,8 @@
 namespace StockMarket.UnitTests.Data
 {
     using System.Collections.Generic;
-    using Thomson02.GBCE.CoreTypes.Stock;
+
+    using Thomson02.StockMarket.CoreTypes.Stock;
 
     /// <summary>
     /// The sample data.
