@@ -9,16 +9,45 @@
 
 namespace Thomson02.GBCE
 {
+    using Thomson02.GBCE.CoreTypes.Stock;
+    using Thomson02.GBCE.CoreTypes.Trade;
+    using Thomson02.GBCE.Logging;
+    using Thomson02.GBCE.Repositories;
+
     /// <summary>
     /// The stock market (singleton).
     /// </summary>
     public sealed class StockMarket
     {
-        private StockMarket()
+        /// <summary>
+        /// The log helper.
+        /// </summary>
+        private ILogHelper logHelper;
+
+        /// <summary>
+        /// The trade repository.
+        /// </summary>
+        private ITradeRepository tradeRepository;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StockMarket"/> class.
+        /// </summary>
+        /// <param name="logHelper">The log helper.</param>
+        /// <param name="tradeRepository">The trade repository.</param>
+        private StockMarket(ILogHelper logHelper, ITradeRepository tradeRepository)
         {
-            
+            this.logHelper = logHelper;
+            this.tradeRepository = tradeRepository;
         }
 
-        public static StockMarket Instance { get; } = new StockMarket();
+        public void BuyStock(Stock stock, double price, int quantity)
+        {
+            var trade = new Trade(stock, TradeType.Buy, price, quantity);
+        }
+
+        public void SellStock(Stock stock, double price, int quantity)
+        {
+            var trade = new Trade(stock, TradeType.Sell, price, quantity);
+        }
     }
 }

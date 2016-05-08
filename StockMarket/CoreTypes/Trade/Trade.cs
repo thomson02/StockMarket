@@ -7,9 +7,10 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Thomson02.GBCE.Trade
+namespace Thomson02.GBCE.CoreTypes.Trade
 {
     using System;
+    using Stock;
 
     /// <summary>
     /// The trade.
@@ -48,7 +49,7 @@ namespace Thomson02.GBCE.Trade
         /// <param name="tradeType">The trade type i.e. Buy or Sell</param>
         /// <param name="price">The price of stock being traded.</param>
         /// <param name="quantity">The quantity of stock being traded.</param>
-        public Trade(Stock.Stock stock, TradeType tradeType, double price, int quantity)
+        public Trade(Stock stock, TradeType tradeType, double price, int quantity)
         {
             this.stockSymbol = stock.Symbol;
             this.tradeType = tradeType;

@@ -7,7 +7,7 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Thomson02.GBCE.Stock
+namespace Thomson02.GBCE.CoreTypes.Stock
 {
     public class PreferredStock : Stock
     {
@@ -19,9 +19,9 @@ namespace Thomson02.GBCE.Stock
         /// <summary>
         /// Initializes a new instance of the <see cref="CommonStock"/> class.
         /// </summary>
-        /// <param name="symbol">The symbol.</param>
-        /// <param name="lastDividend">The last dividend.</param>
-        /// <param name="parValue">The par value.</param>
+        /// <param name="lastDividend">The symbol.</param>
+        /// <param name="parValue">The last dividend.</param>
+        /// <param name="fixedDividend">The par value.</param>
         /// <param name="fixedDividend">The fixed dividend value</param>
         public PreferredStock(string symbol, double lastDividend, double parValue, double fixedDividend)
             : base(symbol, lastDividend, parValue)

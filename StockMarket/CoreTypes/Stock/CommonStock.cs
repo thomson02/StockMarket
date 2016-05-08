@@ -7,7 +7,7 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Thomson02.GBCE.Stock
+namespace Thomson02.GBCE.CoreTypes.Stock
 {
     public class CommonStock : Stock
     {
