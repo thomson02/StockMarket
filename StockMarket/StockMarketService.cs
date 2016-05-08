@@ -11,6 +11,7 @@ namespace Thomson02.GBCE
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
     using System.Linq;
 
     using Thomson02.GBCE.CoreTypes.Stock;
@@ -101,6 +102,7 @@ namespace Thomson02.GBCE
         /// <param name="stockSymbol">The stock.</param>
         /// <param name="price">The price.</param>
         /// <returns>The calculated P/E ration.</returns>
+        [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1650:ElementDocumentationMustBeSpelledCorrectly", Justification = "Reviewed. Suppression is OK here.")]
         public double CalcPERatio(string stockSymbol, double price)
         {
             return this.PerformCalculation(stockSymbol, stock => stock.CalcPERatio(price));
