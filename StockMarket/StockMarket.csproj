@@ -51,7 +51,7 @@
     <Compile Include="Logging\ILogHelper.cs" />
     <Compile Include="Repositories\InMemoryTradeHistory.cs" />
     <Compile Include="Repositories\ITradeHistory.cs" />
-    <Compile Include="StockMarket.cs" />
+    <Compile Include="StockMarketService.cs" />
     <Compile Include="CoreTypes\Stock\PreferredStock.cs" />
     <Compile Include="CoreTypes\Stock\CommonStock.cs" />
     <Compile Include="CoreTypes\Stock\Stock.cs" />
