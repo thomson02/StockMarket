@@ -23,7 +23,7 @@ namespace Thomson02.GBCE.Logging
         public void LogMessage(string message)
         {
             Console.ForegroundColor = ConsoleColor.White;
-            Console.Out.WriteLine(message);
+            Console.Out.WriteLine($"{DateTime.UtcNow}   Information     {message}");
             Console.ResetColor();
         }
 
@@ -34,7 +34,7 @@ namespace Thomson02.GBCE.Logging
         public void LogException(Exception ex)
         {
             Console.ForegroundColor = ConsoleColor.DarkRed;
-            Console.Out.WriteLine("[" + ex.GetType() + "] " + ex.Message);
+            Console.Out.WriteLine($"{DateTime.UtcNow}   Exception     [{ex.GetType()}] {ex.Message}");
             Console.ResetColor();
         }
 
@@ -45,7 +45,7 @@ namespace Thomson02.GBCE.Logging
         public void LogException(string message)
         {
             Console.ForegroundColor = ConsoleColor.DarkRed;
-            Console.Out.WriteLine(message);
+            Console.Out.WriteLine($"{DateTime.UtcNow}   Exception     {message}");
             Console.ResetColor();
         }
     }

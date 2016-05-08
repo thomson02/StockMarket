@@ -31,7 +31,7 @@ namespace Thomson02.GBCE
             this.Bind<ITradeHistory>().To<InMemoryTradeHistory>();
 
             var emptyStockCatalogue = new Dictionary<string, Stock>();
-            this.Bind<StockMarket>().ToSelf().InSingletonScope().WithConstructorArgument("stockCatalogue", emptyStockCatalogue);
+            this.Bind<StockMarketService>().ToSelf().InSingletonScope().WithConstructorArgument("stockCatalogue", emptyStockCatalogue);
         }
     }
 }
