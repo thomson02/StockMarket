@@ -9,19 +9,21 @@
 
 namespace Thomson02.GBCE.CoreTypes.Stock
 {
+    using System;
+
     public class PreferredStock : Stock
     {
         /// <summary>
         /// The fixed dividend value
         /// </summary>
-        private double fixedDividend;
+        private readonly double fixedDividend;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CommonStock"/> class.
         /// </summary>
-        /// <param name="lastDividend">The symbol.</param>
-        /// <param name="parValue">The last dividend.</param>
-        /// <param name="fixedDividend">The par value.</param>
+        /// <param name="symbol">The symbol.</param>
+        /// <param name="lastDividend">The last dividend.</param>
+        /// <param name="parValue">The par value.</param>
         /// <param name="fixedDividend">The fixed dividend value</param>
         public PreferredStock(string symbol, double lastDividend, double parValue, double fixedDividend)
             : base(symbol, lastDividend, parValue)
@@ -32,7 +34,7 @@ namespace Thomson02.GBCE.CoreTypes.Stock
         /// <summary>
         /// Gets the Stock Type
         /// </summary>
-        public override string StockType => "Preferred";
+        public override StockType StockType => StockType.Preferred;
 
         /// <summary>
         /// Calculate the dividend yield for the stock 
@@ -41,7 +43,12 @@ namespace Thomson02.GBCE.CoreTypes.Stock
         /// <returns>The calculated dividend yield</returns>
         public override double CalcDividendYield(double price)
         {
-            throw new System.NotImplementedException();
+            if (price == 0)
+            {
+                throw new ArgumentException("Cannot divide by zero.");
+            }
+
+            return (this.fixedDividend * this.ParValue) / price;
         }
     }
 }

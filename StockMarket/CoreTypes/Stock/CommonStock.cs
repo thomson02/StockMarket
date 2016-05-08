@@ -9,6 +9,8 @@
 
 namespace Thomson02.GBCE.CoreTypes.Stock
 {
+    using System;
+
     public class CommonStock : Stock
     {
         /// <summary>
@@ -25,7 +27,7 @@ namespace Thomson02.GBCE.CoreTypes.Stock
         /// <summary>
         /// Gets the Stock Type
         /// </summary>
-        public override string StockType => "Common";
+        public override StockType StockType => StockType.Common;
 
         /// <summary>
         /// Calculate the dividend yield for the stock 
@@ -34,7 +36,12 @@ namespace Thomson02.GBCE.CoreTypes.Stock
         /// <returns>The calculated dividend yield</returns>
         public override double CalcDividendYield(double price)
         {
-            throw new System.NotImplementedException();
+            if (price == 0)
+            {
+                throw new ArgumentException("Cannot divide by zero.");
+            }
+
+            return this.LastDividend / price;
         }
     }
 }

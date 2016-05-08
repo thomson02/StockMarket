@@ -13,6 +13,22 @@ namespace Thomson02.GBCE.CoreTypes.Trade
     using Stock;
 
     /// <summary>
+    /// The different types of trading.
+    /// </summary>
+    public enum TradeType
+    {
+        /// <summary>
+        /// The buy trade type.
+        /// </summary>
+        Buy,
+
+        /// <summary>
+        /// The sell trade type.
+        /// </summary>
+        Sell
+    }
+
+    /// <summary>
     /// The trade.
     /// </summary>
     public class Trade
@@ -23,6 +39,11 @@ namespace Thomson02.GBCE.CoreTypes.Trade
         public readonly DateTime Timestamp;
 
         /// <summary>
+        /// The stock symbol.
+        /// </summary>
+        public readonly string StockSymbol;
+
+        /// <summary>
         /// The type of the trade
         /// </summary>
         private readonly TradeType tradeType;
@@ -30,17 +51,12 @@ namespace Thomson02.GBCE.CoreTypes.Trade
         /// <summary>
         /// The quantity.
         /// </summary>
-        private readonly int quantity;
+        public readonly int Quantity;
 
         /// <summary>
         /// The price.
         /// </summary>
-        private readonly double price;
-
-        /// <summary>
-        /// The stock symbol.
-        /// </summary>
-        private readonly string stockSymbol;
+        public readonly double Price;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Trade"/> class.
@@ -50,12 +66,26 @@ namespace Thomson02.GBCE.CoreTypes.Trade
         /// <param name="price">The price of stock being traded.</param>
         /// <param name="quantity">The quantity of stock being traded.</param>
         public Trade(Stock stock, TradeType tradeType, double price, int quantity)
+            : this(stock, tradeType, price, quantity, DateTime.UtcNow)
         {
-            this.stockSymbol = stock.Symbol;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Trade"/> class.
+        /// For UnitTest use only
+        /// </summary>
+        /// <param name="stock">The stock that is being traded.</param>
+        /// <param name="tradeType">The trade type i.e. Buy or Sell</param>
+        /// <param name="price">The price of stock being traded.</param>
+        /// <param name="quantity">The quantity of stock being traded.</param>
+        /// <param name="timestamp">The timestamp of the trade event.</param>
+        public Trade(Stock stock, TradeType tradeType, double price, int quantity, DateTime timestamp)
+        {
+            this.StockSymbol = stock.Symbol;
             this.tradeType = tradeType;
-            this.price = price;
-            this.quantity = quantity;
-            this.Timestamp = DateTime.UtcNow;
+            this.Price = price;
+            this.Quantity = quantity;
+            this.Timestamp = timestamp;
         }
 
         /// <summary>
@@ -64,16 +94,7 @@ namespace Thomson02.GBCE.CoreTypes.Trade
         /// <returns>string representation of the <see cref="Trade"/></returns>
         public override string ToString()
         {
-            return $"{this.Timestamp}   TRADE/{this.tradeType}    STOCK: {this.stockSymbol}   QTY: {this.quantity}    PRICE: {this.price}";
+            return $"{this.Timestamp}   TRADE/{this.tradeType}    STOCK: {this.StockSymbol}   QTY: {this.Quantity}    PRICE: {this.Price}";
         }
-    }
-
-    /// <summary>
-    /// The different types of trading.
-    /// </summary>
-    public enum TradeType
-    {
-        Buy,
-        Sell
     }
 }
