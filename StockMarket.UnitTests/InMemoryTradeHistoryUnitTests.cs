@@ -3,7 +3,7 @@
 //    Copyright © Thomson02. All rights reserved.
 // </copyright>
 // <summary>
-//   Defines the StockMarketUnitTests type.
+//   Defines the StockMarketServiceUnitTests type.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 

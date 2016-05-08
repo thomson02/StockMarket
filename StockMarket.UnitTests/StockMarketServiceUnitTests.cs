@@ -1,9 +1,9 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="StockMarketUnitTests.cs" company="Thomson02">
+// <copyright file="StockMarketServiceUnitTests.cs" company="Thomson02">
 //    Copyright © Thomson02. All rights reserved.
 // </copyright>
 // <summary>
-//   Defines the StockMarketUnitTests type.
+//   Defines the StockMarketServiceUnitTests type.
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
@@ -18,7 +18,7 @@ namespace StockMarket.UnitTests
     /// The stock market unit tests.
     /// </summary>
     [TestClass]
-    public class StockMarketUnitTests
+    public class StockMarketServiceUnitTests
     {
         /// <summary>
         /// The stock market.
@@ -47,6 +47,7 @@ namespace StockMarket.UnitTests
         [TestMethod]
         public void TestMethod1()
         {
+
         }
     }
 }

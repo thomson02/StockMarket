@@ -29,6 +29,11 @@ namespace Thomson02.GBCE
         /// <returns>The <see cref="double"/>.</returns>
         public static double LastDividendYield(double lastDividend, double price)
         {
+            if (Convert.ToInt32(price) == 0)
+            {
+                throw new ArgumentException("Cannot divide by zero.");
+            }
+
             return lastDividend / price;
         }
 
@@ -41,6 +46,11 @@ namespace Thomson02.GBCE
         /// <returns>The <see cref="double"/>.</returns>
         public static double FixedDividendYield(double fixedDividend, double parValue, double price)
         {
+            if (Convert.ToInt32(price) == 0)
+            {
+                throw new ArgumentException("Cannot divide by zero.");
+            }
+
             return (fixedDividend * parValue) / price;
         }
 
@@ -53,6 +63,11 @@ namespace Thomson02.GBCE
         [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1650:ElementDocumentationMustBeSpelledCorrectly", Justification = "Reviewed. Suppression is OK here.")]
         public static double PERatio(double price, double dividend)
         {
+            if (Convert.ToInt32(dividend) == 0)
+            {
+                throw new ArgumentException("Cannot divide by zero.");
+            }
+
             return price / dividend;
         }
 
@@ -63,7 +78,12 @@ namespace Thomson02.GBCE
         /// <returns>The <see cref="double"/>.</returns>
         public static double GeometricMean(IList<double> values)
         {
-            var total = values.Aggregate<double, double>(0, (x, y) => x * y);
+            if (!values.Any())
+            {
+                throw new ArgumentException("Non-zero root must be specified");
+            }
+
+            var total = values.Aggregate<double, double>(1, (x, y) => x * y);
             return Math.Pow(total, 1.0 / values.Count);
         }
 
