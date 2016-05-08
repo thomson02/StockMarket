@@ -43,7 +43,7 @@ namespace Thomson02.GBCE.Stock
         }
 
         /// <summary>
-        /// Gets the Stock Type (currently Common or Preferred)
+        /// Gets the Stock Type
         /// </summary>
         public abstract string StockType { get; }
 
