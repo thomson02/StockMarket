@@ -80,7 +80,7 @@ namespace Thomson02.GBCE.CoreTypes.Stock
         [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1650:ElementDocumentationMustBeSpelledCorrectly", Justification = "Reviewed. Suppression is OK here.")]
         public double CalcPERatio(double price)
         {
-            return price / this.CalcDividendYield(price);
+            return Calculations.PERatio(price, this.CalcDividendYield(price));
         }
     }
 }

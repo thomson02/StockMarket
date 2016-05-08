@@ -43,12 +43,12 @@ namespace Thomson02.GBCE.CoreTypes.Stock
         /// <returns>The calculated dividend yield</returns>
         public override double CalcDividendYield(double price)
         {
-            if (price == 0)
+            if (Convert.ToInt32(price) == 0)
             {
                 throw new ArgumentException("Cannot divide by zero.");
             }
 
-            return (this.fixedDividend * this.ParValue) / price;
+            return Calculations.FixedDividendYield(this.fixedDividend, this.ParValue, price);
         }
     }
 }

@@ -63,9 +63,7 @@ namespace Thomson02.GBCE
             var stockPrices = this.stockCatalogue.Select(s => this.CalcVolumeWeightedStockPrice(s.Key)).ToList();
 
             // then calc the geometric mean for these values
-            var total = stockPrices.Aggregate<double, double>(0, (x, y) => x * y);
-
-            return Math.Pow(total, 1.0 / stockPrices.Count);
+            return Calculations.GeometricMean(stockPrices);
         }
 
         /// <summary>
@@ -81,7 +79,8 @@ namespace Thomson02.GBCE
                 stock =>
                     {
                         var stockTrades = this.tradeHistory.GetTrades(stock.Symbol).ToList();
-                        return stockTrades.Sum(t => t.Price * t.Quantity) / stockTrades.Sum(t => t.Quantity);
+                   
+                        return Calculations.VolumeWeightedStockPrice(stockTrades);
                     });
         }
 

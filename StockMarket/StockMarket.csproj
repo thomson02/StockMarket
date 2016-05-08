@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bindings.cs" />
+    <Compile Include="Calculations.cs" />
     <Compile Include="Logging\ConsoleLogHelper.cs" />
     <Compile Include="Logging\ILogHelper.cs" />
     <Compile Include="Repositories\InMemoryTradeHistory.cs" />
